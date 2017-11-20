@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/background_fill"
+        />
+
+    <item android:id="@android:id/progress">
+
+        <clip android:drawable="@drawable/progress_fill" />
+        <corners android:radius="50dp" />
+    </item>
+
+</layer-list>

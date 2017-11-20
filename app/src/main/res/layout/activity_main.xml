@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bgcolor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        android:gravity="center_vertical"
+        android:outlineProvider="bounds">
+
+        <ImageView
+            android:id="@+id/info_btn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:iconTint="@color/txtcolor"
+            android:src="@android:drawable/ic_dialog_info" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/proximanova_bold"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/txtcolor"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/share_btn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:iconTint="@color/txtcolor"
+            android:src="@android:drawable/ic_menu_share"
+            android:tooltipText="share the app to friends" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center">
+
+            <!--<RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/bg_shape"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/proximanova_bold"
+                    android:gravity="center"
+                    android:text="@string/on"
+                    android:textColor="@color/txtcolor"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/bg_shape_color"
+                    android:button="@android:color/transparent"
+                    android:checked="true"
+                    android:fontFamily="@font/proximanova_bold"
+                    android:gravity="center"
+                    android:text="@string/off"
+                    android:textColor="@color/txtcolor"
+                    android:textSize="18sp" />
+
+
+            </RadioGroup>-->
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switchcompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:checked="false"
+                android:fontFamily="@font/proximanova_bold"
+                android:text="Alert On/Off "
+                android:textColor="@color/txtcolor"
+                android:textStyle="bold"
+                android:tooltipText="" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/proxima_nova"
+            android:text="dsfdsf"
+            android:textColor="@color/txtcolor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--<me.itangqi.waveloadingview.WaveLoadingView
+            android:id="@+id/progressbar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/progress_drawable"
+            app:wlv_borderColor="@color/colorAccent"
+            app:wlv_borderWidth="3dp"
+            app:wlv_progressValue="40"
+            app:wlv_round_rectangle="true"
+            app:wlv_shapeType="rectangle"
+            app:wlv_titleCenter="Center Title"
+            app:wlv_titleCenterColor="@color/txtcolor"
+            app:wlv_titleCenterSize="24sp"
+            app:wlv_triangle_direction="north"
+            app:wlv_waveAmplitude="70"
+            app:wlv_waveColor="@color/colorAccent" />-->
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/root_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="88dp"
+                android:layout_height="171dp"
+                android:layout_gravity="center"
+                android:background="@drawable/seekbar_bg"></LinearLayout>
+
+
+            <SeekBar
+                android:id="@+id/progressbar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="-5dp"
+                android:alpha="0.5"
+                android:max="100"
+                android:maxHeight="100dp"
+                android:minHeight="90dp"
+                android:progress="20"
+                android:progressDrawable="@drawable/progress"
+                android:rotation="270"
+                android:splitTrack="false"
+                android:thumb="@null" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textfield1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/proxima_nova"
+                android:text="Send alerts at"
+                android:textColor="@color/txtcolor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textfield2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/proxima_nova"
+                android:text="0"
+                android:textColor="@color/level"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textfield3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/proxima_nova"
+                android:text="%"
+                android:textColor="@color/level"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/msg_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="5dp"
+                android:background="@drawable/button"
+                android:drawableStart="@drawable/set_message"
+                android:elevation="5dp"
+                android:fontFamily="@font/proximanova_bold"
+                android:padding="10dp"
+                android:text="Edit alert message"
+                android:textColor="@color/txtcolor"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/send_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="5dp"
+                android:background="@drawable/button"
+                android:drawableEnd="@drawable/whom_tosend"
+                android:elevation="5dp"
+                android:fontFamily="@font/proximanova_bold"
+                android:padding="10dp"
+                android:text="Whom to send"
+                android:textColor="@color/txtcolor"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
