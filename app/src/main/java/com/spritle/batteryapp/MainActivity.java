@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         send_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mTourGuideHandler.cleanUp();
+                //mTourGuideHandler.cleanUp();
                 Intent i = new Intent(MainActivity.this, ContacsActivity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
