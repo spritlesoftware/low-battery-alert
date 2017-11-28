@@ -46,20 +46,29 @@
         android:visibility="gone" />
 
     <LinearLayout
+        android:id="@+id/no_contact"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/contacts"/>
         <TextView
             android:id="@+id/empty_msg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/proximanova_bold"
+            android:text="No contacts!"
+            android:textColor="@color/Black"
             android:gravity="center"
-            android:text="No contacts.."
-            android:textColor="@color/black"
             android:textSize="22sp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <RelativeLayout
