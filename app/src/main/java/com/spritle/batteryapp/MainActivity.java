@@ -18,22 +18,26 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
+import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button msg_btn, send_btn;
-    ImageView info_btn, share_btn;
     SeekBar pb;
     TextView level_txt;
     SharedPreferences preferences;
@@ -72,22 +75,29 @@ public class MainActivity extends AppCompatActivity {
 
     public ChainTourGuide mTourGuideHandler;
 
+    private DrawerLayout drawerLayout;
+    private Toolbar toolbar;
+    NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.navigation_layout);
 
         sendSMSWithPermission();
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        info_btn = (ImageView) findViewById(R.id.info_btn);
-        share_btn = (ImageView) findViewById(R.id.share_btn);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+
         pb = (SeekBar) findViewById(R.id.progressbar);
         level_txt = (TextView) findViewById(R.id.textfield2);
         msg_btn = (Button) findViewById(R.id.msg_btn);
         send_btn = (Button) findViewById(R.id.send_btn);
-
+        initNavigationDrawer();
 
         switchCompat = (SwitchCompat) findViewById(R.id.switchcompat);
 
@@ -177,7 +187,10 @@ public class MainActivity extends AppCompatActivity {
         send_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mTourGuideHandler.cleanUp();
+
+                if (mTourGuideHandler != null) {
+                    mTourGuideHandler.cleanUp();
+                }
                 Intent i = new Intent(MainActivity.this, ContacsActivity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
@@ -224,54 +237,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        share_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String shareBody = "https://play.google.com/store/apps/details?id=************************";
 
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "ATA APplication(Open it in Google Play Store to Download the Application)");
 
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-
-                startActivity(Intent.createChooser(sharingIntent, "Share via"));
-
-            }
-        });
-
-        info_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new MaterialStyledDialog.Builder(MainActivity.this)
-                        .setTitle("Awesome!")
-                        .setStyle(Style.HEADER_WITH_ICON)
-                        .setIcon(android.R.drawable.ic_menu_send)
-                        .setStyle(Style.HEADER_WITH_TITLE)
-                        .setHeaderColor(R.color.colorPrimary)
-                        .setDescription("What can we improve? Your feedback is always welcome.")
-                        .setPositiveText("Feedback")
-
-                        .onPositive(new MaterialDialog.SingleButtonCallback() {
-                            @Override
-                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                Intent email = new Intent(Intent.ACTION_SEND);
-                                email.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@spritle.com"});
-                                //email.putExtra(Intent.EXTRA_CC, new String[]{ to});
-                                //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
-                                email.putExtra(Intent.EXTRA_SUBJECT, "Feedback of Volta app");
-                                email.putExtra(Intent.EXTRA_TEXT, "");
-
-                                //need this to prompts email client only
-                                email.setType("message/rfc822");
-
-                                startActivity(Intent.createChooser(email, "Choose an Email :"));
-                            }
-                        })
-
-                        .show();
-            }
-        });
         if (pb_size == null) {
             runOverlay_ContinueMethod();
         }
@@ -323,21 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        ImageView close_btn = (ImageView) dialog.findViewById(R.id.close_btn);
-        close_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!edt.getText().toString().isEmpty()) {
-                    editor = preferences.edit();
-                    editor.putString("alert_msg", edt.getText().toString());
-                    editor.apply();
-                    dialog.dismiss();
-                } else {
-                    Toast.makeText(MainActivity.this, "please enter the msg", Toast.LENGTH_SHORT).show();
-                }
 
-            }
-        });
 
     }
 
@@ -470,7 +423,7 @@ public class MainActivity extends AppCompatActivity {
                 .setToolTip(new ToolTip()
                         .setDescription("Pick recipient from your contacts")
                         .setBackgroundColor(Color.parseColor("#c0392b"))
-                        .setGravity(Gravity.TOP| Gravity.LEFT)
+                        .setGravity(Gravity.TOP | Gravity.LEFT)
                 )
                 .setOverlay(new Overlay()
                         .setHoleRadius(50)
@@ -501,4 +454,85 @@ public class MainActivity extends AppCompatActivity {
         mTourGuideHandler = ChainTourGuide.init(this).playInSequence(sequence);
     }
 
+    public void initNavigationDrawer() {
+
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                int id = menuItem.getItemId();
+
+                switch (id) {
+                    case R.id.notification:
+
+                        drawerLayout.closeDrawers();
+                        break;
+                    case R.id.share:
+                        drawerLayout.closeDrawers();
+                        String shareBody = "https://play.google.com/store/apps/details?id=************************";
+
+                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                        sharingIntent.setType("text/plain");
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "ATA APplication(Open it in Google Play Store to Download the Application)");
+
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+
+                        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+
+                        break;
+                    case R.id.info:
+                        new MaterialStyledDialog.Builder(MainActivity.this)
+                                .setTitle("Awesome!")
+                                .setStyle(Style.HEADER_WITH_ICON)
+                                .setIcon(android.R.drawable.ic_menu_send)
+                                .setStyle(Style.HEADER_WITH_TITLE)
+                                .setHeaderColor(R.color.colorPrimary)
+                                .setDescription("What can we improve? Your feedback is always welcome.")
+                                .setPositiveText("Feedback")
+
+                                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                                    @Override
+                                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                        Intent email = new Intent(Intent.ACTION_SEND);
+                                        email.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@spritle.com"});
+                                        //email.putExtra(Intent.EXTRA_CC, new String[]{ to});
+                                        //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
+                                        email.putExtra(Intent.EXTRA_SUBJECT, "Feedback of Volta app");
+                                        email.putExtra(Intent.EXTRA_TEXT, "");
+
+                                        //need this to prompts email client only
+                                        email.setType("message/rfc822");
+
+                                        startActivity(Intent.createChooser(email, "Choose an Email :"));
+                                    }
+                                })
+
+                                .show();
+                        drawerLayout.closeDrawers();
+                        break;
+
+
+                }
+                return true;
+            }
+        });
+        View header = navigationView.getHeaderView(0);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+
+            @Override
+            public void onDrawerClosed(View v) {
+                super.onDrawerClosed(v);
+            }
+
+            @Override
+            public void onDrawerOpened(View v) {
+                super.onDrawerOpened(v);
+            }
+        };
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+    }
 }

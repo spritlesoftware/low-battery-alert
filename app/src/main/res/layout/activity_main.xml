@@ -3,12 +3,16 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/battery_bg"
-    android:orientation="vertical">
+    android:background="@mipmap/battery_bg"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.spritle.batteryapp.MainActivity"
+    tools:showIn="@layout/navigation_layout">
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:id="@+id/rl_toolbar"
         android:layout_width="fill_parent"
         android:layout_height="56dp"
@@ -51,7 +55,7 @@
             android:src="@android:drawable/ic_menu_share"
             android:tooltipText="share the app to friends" />
     </RelativeLayout>
-
+-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

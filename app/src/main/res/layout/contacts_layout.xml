@@ -43,17 +43,16 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:gravity="center">
+        android:gravity="bottom">
 
         <Button
             android:id="@+id/done_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="5dp"
-            android:background="@drawable/button"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bgcolor"
             android:elevation="5dp"
             android:fontFamily="@font/proximanova_bold"
             android:padding="10dp"
