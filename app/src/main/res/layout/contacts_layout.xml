@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:visibility="visible">
 
     <RelativeLayout
         android:id="@+id/rl_toolbar"
@@ -26,8 +29,8 @@
 
         <ImageView
             android:id="@+id/add_btn"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -39,7 +42,34 @@
         android:id="@+id/lv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1" />
+        android:layout_above="@+id/button1"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/no_contact"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/contacts"/>
+        <TextView
+            android:id="@+id/empty_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/proximanova_bold"
+            android:text="No contacts!"
+            android:textColor="@color/Black"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -58,8 +88,8 @@
             android:padding="10dp"
             android:text="Done"
             android:textColor="@color/txtcolor"
-            android:visibility="gone"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </LinearLayout>

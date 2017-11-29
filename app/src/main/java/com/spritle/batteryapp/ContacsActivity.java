@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.LinearLayout;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
@@ -46,6 +47,7 @@ public class ContacsActivity extends AppCompatActivity {
     MyAdapter ma;
     ListView lv;
     ImageView add_btn;
+    LinearLayout no_contact;
     SharedPreferences mSharedPreference1;
     SharedPreferences.Editor editor;
     Button done_btn;
@@ -58,6 +60,7 @@ public class ContacsActivity extends AppCompatActivity {
         add_btn = (ImageView) findViewById(R.id.add_btn);
         lv = (ListView) findViewById(R.id.lv);
         done_btn = (Button) findViewById(R.id.done_btn);
+        no_contact = findViewById(R.id.no_contact);
         mSharedPreference1 = PreferenceManager.getDefaultSharedPreferences(ContacsActivity.this);
         // Read and show the contacts
         showContacts();
@@ -111,7 +114,9 @@ public class ContacsActivity extends AppCompatActivity {
             lv.setTextFilterEnabled(true);
             if (size != 0) {
                 done_btn.setVisibility(View.VISIBLE);
-
+            }
+            else{
+                no_contact.setVisibility(LinearLayout.VISIBLE);
             }
         }
     }
@@ -186,7 +191,7 @@ public class ContacsActivity extends AppCompatActivity {
                 lv.setTextFilterEnabled(true);
                 if (phno1.size() != 0) {
                     done_btn.setVisibility(View.VISIBLE);
-
+                    no_contact.setVisibility(LinearLayout.GONE);
                 }
             } else {
                 Toast.makeText(this, "Already added", Toast.LENGTH_SHORT).show();
@@ -276,8 +281,10 @@ public class ContacsActivity extends AppCompatActivity {
                     editor.commit();
                     if (phno1.size() != 0) {
                         done_btn.setVisibility(View.VISIBLE);
+                        no_contact.setVisibility(LinearLayout.GONE);
                     } else {
                         done_btn.setVisibility(View.GONE);
+                        no_contact.setVisibility(LinearLayout.VISIBLE);
                     }
                 }
             });

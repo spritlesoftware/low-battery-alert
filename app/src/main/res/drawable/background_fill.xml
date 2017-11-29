@@ -7,7 +7,10 @@
         android:startColor="#35212E"
         android:centerColor="#35212E"
         android:endColor="#291E2B"  />
-    <corners android:radius="15dp" />
+    <corners android:radius="10dp" />
+    <stroke
+        android:width="2dp"
+        android:color="@color/Red" />
     <!--<stroke
         android:width="5dp"
         android:color="#1A1927" />
