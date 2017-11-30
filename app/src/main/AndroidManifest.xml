@@ -30,6 +30,13 @@
                 <action android:name="android.intent.action.BATTERY_CHANGED"/>
             </intent-filter>
         </receiver>
+        <receiver android:name=".NotificationReceiver">
+            <intent-filter>
+                <action android:name="YES_ACTION"/>
+                <action android:name="STOP_ACTION"/>
+
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -50,10 +50,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="20dp"
-                        android:fontFamily="@font/proximanova_bold"
+                        android:fontFamily="@font/avenir_roman"
                         android:gravity="center"
                         android:text="Alert Message !"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/txtcolor"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -62,12 +62,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:fontFamily="@font/proxima_nova"
+                        android:fontFamily="@font/avenir_light"
                         android:inputType="textMultiLine|text"
                         android:maxLines="4"
                         android:lines="4"
                         android:text="rterstgrsdgaerwtwatrwetgfwersghtdjkuykiulopil,hjbmgxcdfrteszrfszzdfcAWDszxcdsgfvdghfhfgjnghcnghcndfgdgdfgd"
-                        android:textColor="@color/colorPrimary" />
+                        android:textColor="@color/alertmsg" />
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -81,7 +81,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/button_bg_color"
-                            android:fontFamily="@font/proximanova_bold"
+                            android:fontFamily="@font/avenir_roman"
                             android:padding="10dp"
                             android:text="Ok"
                             android:textColor="@color/txtcolor"

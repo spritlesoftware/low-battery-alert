@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@mipmap/battery_bg"
+    android:background="@drawable/battery_bg"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.spritle.batteryapp.MainActivity"
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:checked="false"
-                android:fontFamily="@font/proximanova_bold"
+                android:fontFamily="@font/avenir_light"
                 android:text="Alert On/Off "
                 android:textColor="@color/txtcolor"
                 android:textStyle="bold"
@@ -122,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/proxima_nova"
+            android:fontFamily="@font/avenir_light"
             android:text="dsfdsf"
             android:textColor="@color/txtcolor"
             android:textSize="18sp"
@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:fontFamily="@font/proxima_nova"
+                android:fontFamily="@font/avenir_light"
                 android:text="Send alerts at"
                 android:textColor="@color/txtcolor"
                 android:textSize="18sp" />
@@ -226,7 +226,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/proxima_nova"
+                android:fontFamily="@font/avenir_light"
                 android:text="0"
                 android:textColor="@color/level"
                 android:textSize="18sp" />
@@ -236,50 +236,54 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="@font/proxima_nova"
+                android:fontFamily="@font/avenir_light"
                 android:text="%"
                 android:textColor="@color/level"
                 android:textSize="18sp" />
 
 
         </LinearLayout>
-
+    </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="bottom|center"
             android:layout_margin="10dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/msg_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
+                android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:background="@drawable/button"
-                android:drawableStart="@drawable/set_message"
+                android:background="@null"
+                android:drawableTop="@drawable/set_message"
+                android:drawablePadding="10dp"
                 android:elevation="5dp"
-                android:fontFamily="@font/proximanova_bold"
+                android:fontFamily="@font/avenir_roman"
                 android:padding="10dp"
-                android:text="Edit alert message"
+                android:text="Alert message"
                 android:textColor="@color/txtcolor"
+                android:textAllCaps="false"
                 android:textSize="14sp" />
 
             <Button
                 android:id="@+id/send_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
+                android:layout_gravity="center"
                 android:layout_margin="5dp"
-                android:background="@drawable/button"
-                android:drawableEnd="@drawable/whom_tosend"
+                android:background="@null"
+                android:drawableTop="@drawable/whom_tosend"
+                android:drawablePadding="10dp"
                 android:elevation="5dp"
-                android:fontFamily="@font/proximanova_bold"
+                android:fontFamily="@font/avenir_roman"
                 android:padding="10dp"
-                android:text="Whom to send"
+                android:text="Contacts list"
                 android:textColor="@color/txtcolor"
+                android:textAllCaps="false"
                 android:textSize="14sp" />
         </LinearLayout>
-    </LinearLayout>
 </LinearLayout>

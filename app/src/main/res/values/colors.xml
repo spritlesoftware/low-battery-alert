@@ -4,7 +4,8 @@
     <color name="colorPrimaryDark">#1b1b2d</color>
     <color name="colorAccent">#EF2829</color>
     <color name="bgcolor">#2f2f3c</color>
-    <color name="txtcolor">#FFFFFF</color>
+    <color name="txtcolor">#e6e6ff</color>
     <color name="txtmsg">#646478</color>
     <color name="level">#EA2A2B</color>
+    <color name="alertmsg">#9d9daa</color>
 </resources>

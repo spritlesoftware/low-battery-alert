@@ -22,6 +22,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -78,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     NavigationView navigationView;
+    private SwitchCompat switcher;
+    ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
         level_txt = (TextView) findViewById(R.id.textfield2);
         msg_btn = (Button) findViewById(R.id.msg_btn);
         send_btn = (Button) findViewById(R.id.send_btn);
+        Menu menu = navigationView.getMenu();
+        MenuItem menuItem = menu.findItem(R.id.notification);
+        View actionView = MenuItemCompat.getActionView(menuItem);
+
+        switcher = (SwitchCompat) actionView.findViewById(R.id.notify_switch);
         initNavigationDrawer();
 
         switchCompat = (SwitchCompat) findViewById(R.id.switchcompat);
@@ -159,6 +168,14 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                 }
+            }
+        });
+        switcher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor = preferences.edit();
+                editor.putBoolean("notify_bool", switcher.isChecked());
+                editor.apply();
             }
         });
         alertmsg = preferences.getString("alert_msg", null);
@@ -465,7 +482,10 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (id) {
                     case R.id.notification:
-
+                        switcher.setChecked(!switcher.isChecked());
+                        editor = preferences.edit();
+                        editor.putBoolean("notify_bool", switcher.isChecked());
+                        editor.apply();
                         drawerLayout.closeDrawers();
                         break;
                     case R.id.share:
@@ -520,7 +540,7 @@ public class MainActivity extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
 
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
 
             @Override
             public void onDrawerClosed(View v) {
@@ -535,4 +555,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
     }
+
+
 }

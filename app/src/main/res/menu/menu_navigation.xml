@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="single">
 
         <item
             android:id="@+id/notification"
             android:title="Notification"
-            android:icon="@drawable/ic_setting"
-            android:checkable="false"/>
+            android:icon="@drawable/notify"
+            app:showAsAction="always"
+            android:iconTint="@color/White"
+            app:actionLayout="@layout/item"/>
         <item
             android:id="@+id/share"
             android:title="Share"
+            app:showAsAction="always"
             android:icon="@android:drawable/ic_menu_share"/>
         <item
             android:id="@+id/info"
             android:title="Info"
-            android:icon="@drawable/heart1"/>
+            app:showAsAction="always"
+            android:icon="@drawable/info"/>
     </group>
 </menu>
 

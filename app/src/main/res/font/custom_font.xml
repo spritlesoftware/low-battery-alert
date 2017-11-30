@@ -3,9 +3,9 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/proxima_nova" />
+        android:font="@font/avenir_light" />
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/proximanova_bold" />
+        android:font="@font/avenir_book" />
 </font-family>
