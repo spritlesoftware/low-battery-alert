@@ -4,9 +4,14 @@
         <shape>
             <gradient
                 android:startColor="@color/White"
-                android:centerColor="#2D1E2B"
+                android:centerColor="@color/White"
                 android:endColor="@color/White" />
-            <corners android:radius="1dp" />
+            <corners android:radius="2dp" />
+            <stroke
+                android:width="3dp"
+                android:color="#1A1927" />
+
         </shape>
+
     </item>
 </layer-list>
