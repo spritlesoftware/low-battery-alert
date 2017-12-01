@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/avenir_roman"
             android:text="No contacts!"
-            android:textColor="@color/txtcolor"
+            android:textColor="@color/Black"
             android:gravity="center"
             android:textSize="22sp"
             android:layout_marginTop="5dp"
