@@ -59,7 +59,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="top"
         android:orientation="vertical">
 
@@ -158,30 +157,30 @@
         <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/root_view"
             android:layout_width="fill_parent"
-            android:layout_height="190dp"
+            android:layout_height="285dp"
             android:weightSum="5"
+            android:layout_marginTop="5pt"
             android:orientation="vertical">
             <LinearLayout
-                android:layout_width="15dp"
+                android:layout_width="20dp"
                 android:layout_height="10dp"
-                android:layout_weight="1"
+                android:layout_marginTop="4pt"
                 android:background="@drawable/corner_fg"
                 android:layout_gravity="center_horizontal">
             </LinearLayout>
             <LinearLayout
                 android:layout_width="88dp"
-                android:layout_height="171dp"
+                android:layout_height="258dp"
                 android:layout_gravity="center"
-                android:background="@drawable/transparent_particles"
-                android:layout_weight="4">
+                android:background="@drawable/transparent_particles">
                 </LinearLayout>
             <SeekBar
                 android:id="@+id/progressbar"
-                android:layout_width="200dp"
+                android:layout_width="285dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="-5dp"
-                android:alpha="0.5"
+                android:alpha="0.7"
                 android:max="100"
                 android:maxHeight="100dp"
                 android:minHeight="90dp"
@@ -199,7 +198,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
