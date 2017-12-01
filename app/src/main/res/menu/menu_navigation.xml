@@ -14,10 +14,10 @@
             android:id="@+id/share"
             android:title="Share"
             app:showAsAction="always"
-            android:icon="@android:drawable/ic_menu_share"/>
+            android:icon="@drawable/share"/>
         <item
             android:id="@+id/info"
-            android:title="Info"
+            android:title="Feedback"
             app:showAsAction="always"
             android:icon="@drawable/info"/>
     </group>

@@ -15,4 +15,7 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/toggle_btn</item>
+    </style>
 </resources>

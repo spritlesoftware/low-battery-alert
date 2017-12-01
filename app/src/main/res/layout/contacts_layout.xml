@@ -56,7 +56,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:src="@drawable/contacts"/>
+            android:src="@drawable/no_contacts"/>
         <TextView
             android:id="@+id/empty_msg"
             android:layout_width="match_parent"

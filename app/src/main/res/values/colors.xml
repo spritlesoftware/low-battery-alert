@@ -8,4 +8,5 @@
     <color name="txtmsg">#646478</color>
     <color name="level">#EA2A2B</color>
     <color name="alertmsg">#9d9daa</color>
+    <color name="toggle_btn">#5d9b76</color>
 </resources>

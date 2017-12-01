@@ -29,6 +29,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
+import android.text.Html;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.navigation_layout);
 
         sendSMSWithPermission();
@@ -554,6 +556,8 @@ public class MainActivity extends AppCompatActivity {
         };
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+        TextView copyrights_txt =(TextView)findViewById(R.id.copyrights_txt);
+        copyrights_txt.setText(Html.fromHtml("Made \u2764 with <a href='https://www.spritle.com/'>Spritle</a>"));
     }
 
 

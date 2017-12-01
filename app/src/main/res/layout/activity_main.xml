@@ -110,10 +110,11 @@
                 android:layout_margin="10dp"
                 android:checked="false"
                 android:fontFamily="@font/avenir_light"
-                android:text="Alert On/Off "
                 android:textColor="@color/txtcolor"
                 android:textStyle="bold"
-                android:tooltipText="" />
+                android:textOn="On"
+                android:textOff="Off"
+                app:track="@drawable/switch_bg"/>
         </LinearLayout>
 
 
@@ -217,7 +218,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:fontFamily="@font/avenir_light"
-                android:text="Send alerts at"
+                android:text="Alert message set at"
                 android:textColor="@color/txtcolor"
                 android:textSize="18sp" />
 
@@ -254,34 +255,36 @@
 
             <Button
                 android:id="@+id/msg_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:background="@null"
-                android:drawableTop="@drawable/set_message"
+                android:drawableTop="@drawable/set_msg"
                 android:drawablePadding="10dp"
                 android:elevation="5dp"
                 android:fontFamily="@font/avenir_roman"
                 android:padding="10dp"
                 android:text="Alert message"
+                android:layout_weight="1"
                 android:textColor="@color/txtcolor"
                 android:textAllCaps="false"
                 android:textSize="14sp" />
 
             <Button
                 android:id="@+id/send_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:background="@null"
-                android:drawableTop="@drawable/whom_tosend"
+                android:drawableTop="@drawable/contacts"
                 android:drawablePadding="10dp"
                 android:elevation="5dp"
                 android:fontFamily="@font/avenir_roman"
                 android:padding="10dp"
                 android:text="Contacts list"
+                android:layout_weight="1"
                 android:textColor="@color/txtcolor"
                 android:textAllCaps="false"
                 android:textSize="14sp" />
