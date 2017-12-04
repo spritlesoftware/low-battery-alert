@@ -6,44 +6,31 @@
     android:layout_height="fill_parent"
     android:background="@drawable/battery_bg"
     android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.spritle.batteryapp.MainActivity"
-    tools:showIn="@layout/navigation_layout">
-
+    android:weightSum="2">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:orientation="vertical"
-        android:weightSum="4">
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="right|center"
+        android:orientation="vertical">
 
-        <LinearLayout
-
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/switchcompat"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:gravity="right|center">
-
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switchcompat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:checked="false"
-                android:fontFamily="@font/avenir_light"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/txtcolor"
-                android:textOff="Off"
-                android:textOn="On"
-                android:textStyle="bold"
-                android:theme="@style/Color1SwitchStyle"
-                android:thumb="@drawable/switch_custom_selector"
-                app:showText="true"
-                app:track="@drawable/switch_custom_track" />
-        </LinearLayout>
-
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:checked="false"
+            android:fontFamily="@font/avenir_light"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/txtcolor"
+            android:textOff="Off"
+            android:textOn="On"
+            android:textStyle="bold"
+            android:theme="@style/Color1SwitchStyle"
+            android:thumb="@drawable/switch_custom_selector"
+            app:showText="true"
+            app:track="@drawable/switch_custom_track" />
 
         <TextView
             android:id="@+id/textfield"
@@ -60,33 +47,37 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
 
-        <LinearLayout
-            android:layout_width="20dp"
-            android:layout_height="10dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/corner_fg"></LinearLayout>
-
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <FrameLayout
             android:id="@+id/root_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="top"
+            android:layout_weight="1"
             android:orientation="vertical">
+
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="10dp"
+                android:layout_gravity="top|center"
+                android:background="@drawable/corner_fg"></Button>
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/transparent_particles"></ImageView>
 
             <SeekBar
                 android:id="@+id/progressbar"
-                android:layout_width="match_parent"
+                android:layout_width="278dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:alpha="0.7"
@@ -101,56 +92,64 @@
 
             </SeekBar>
         </FrameLayout>
+
     </LinearLayout>
 
-
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textfield1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:fontFamily="@font/avenir_light"
-            android:text="Alert message set at"
-            android:textColor="@color/txtcolor"
-            android:textSize="18sp" />
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textfield2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/avenir_light"
-            android:text="0"
-            android:textColor="@color/level"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textfield1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/avenir_light"
+                android:text="Alert message set at"
+                android:textColor="@color/txtcolor"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textfield3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/avenir_light"
-            android:text="%"
-            android:textColor="@color/level"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textfield2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/avenir_light"
+                android:text="0"
+                android:textColor="@color/level"
+                android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/textfield3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/avenir_light"
+                android:text="%"
+                android:textColor="@color/level"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="bottom|center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:gravity="bottom"
         android:orientation="horizontal">
 
         <Button
@@ -189,4 +188,6 @@
             android:textColor="@color/txtcolor"
             android:textSize="14sp" />
     </LinearLayout>
+
+
 </LinearLayout>
