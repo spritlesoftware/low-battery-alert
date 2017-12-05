@@ -18,4 +18,11 @@
     <style name="Color1SwitchStyle">
         <item name="colorControlActivated">@color/toggle_btn</item>
     </style>
+    <style name="vertical_progress_bar">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
 </resources>
