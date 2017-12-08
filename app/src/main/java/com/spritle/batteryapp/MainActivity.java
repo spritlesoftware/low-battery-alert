@@ -26,6 +26,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     NavigationView navigationView;
-    private SwitchCompat switcher;
+    private AppCompatCheckBox switcher;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.notification);
         View actionView = MenuItemCompat.getActionView(menuItem);
 
-        switcher = (SwitchCompat) actionView.findViewById(R.id.notify_switch);
+        switcher = (AppCompatCheckBox) actionView.findViewById(R.id.notify_switch);
         initNavigationDrawer();
 
         switchCompat = (SwitchCompat) findViewById(R.id.switchcompat);
@@ -496,7 +497,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                         sharingIntent.setType("text/plain");
-                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "ATA APplication(Open it in Google Play Store to Download the Application)");
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Minoot Application(Open it in Google Play Store to Download the Application)");
 
                         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
 
@@ -520,7 +521,7 @@ public class MainActivity extends AppCompatActivity {
                                         email.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@spritle.com"});
                                         //email.putExtra(Intent.EXTRA_CC, new String[]{ to});
                                         //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
-                                        email.putExtra(Intent.EXTRA_SUBJECT, "Feedback of Volta app");
+                                        email.putExtra(Intent.EXTRA_SUBJECT, "Feedback of Minoot app");
                                         email.putExtra(Intent.EXTRA_TEXT, "");
 
                                         //need this to prompts email client only
@@ -557,7 +558,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         TextView copyrights_txt =(TextView)findViewById(R.id.copyrights_txt);
-        copyrights_txt.setText(Html.fromHtml("Made \u2764 with <a href='https://www.spritle.com/'>Spritle</a>"));
+        copyrights_txt.setText(Html.fromHtml("Made  with \u2764 at <a style='color:#13A5CF' href='https://www.spritle.com/'>Spritle</a>"));
     }
 
 

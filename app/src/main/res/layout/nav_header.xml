@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="230dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="#35354c"
     android:orientation="vertical"
     android:paddingBottom="20dp"
     android:gravity="center"
@@ -13,16 +13,6 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/app_icon" />
 
-    <TextView
-        android:id="@+id/tv_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@color/txtcolor"
-        android:fontFamily="@font/avenir_roman"
-        android:textSize="22sp" />
 </LinearLayout>

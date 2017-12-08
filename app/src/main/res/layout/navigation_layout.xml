@@ -22,8 +22,8 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.AppBarLayout>
@@ -55,16 +55,17 @@
                 android:id="@+id/copyrights_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.4"
                 android:gravity="start"
                 android:textColor="@color/txtmsg"
+                android:textColorLink="#13A5CF"
                 android:text=" "
                 android:textSize="14sp" />
             <TextView
                 android:id="@+id/version_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:gravity="end"
                 android:textColor="@color/txtmsg"
                 android:text="v0.1"

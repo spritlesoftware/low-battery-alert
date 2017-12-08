@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.preference.PreferenceManager;
@@ -105,8 +104,6 @@ public class BatteryLevelReceiver extends BroadcastReceiver {
 
         notif = new Notification.Builder(context);
         notif.setSmallIcon(R.mipmap.ic_launcher);
-        notif.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),
-                R.mipmap.ic_launcher));
 
         notif.setContentTitle("Do you want to send battery level msg to others?");
         Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
