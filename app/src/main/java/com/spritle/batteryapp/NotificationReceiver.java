@@ -31,7 +31,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (AppConstant.YES_ACTION.equals(action)) {
-            Toast.makeText(context, "YES CALLED", Toast.LENGTH_SHORT).show();
+
 
             manager.cancel(notificationId);
             int size = preferences.getInt("phno_size", 0);
@@ -55,8 +55,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                 Toast.makeText(context, "Please add Contacts", Toast.LENGTH_SHORT).show();
             }
         }
-        else  if (AppConstant.STOP_ACTION.equals(action)) {
-            Toast.makeText(context, "STOP CALLED", Toast.LENGTH_SHORT).show();
+        else {
 
             manager.cancel(notificationId);
         }

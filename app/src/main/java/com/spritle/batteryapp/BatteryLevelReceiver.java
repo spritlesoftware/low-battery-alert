@@ -15,6 +15,8 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.Random;
+
 /**
  * Created by SpritleAndroid on 09/11/17.
  */
@@ -104,24 +106,24 @@ public class BatteryLevelReceiver extends BroadcastReceiver {
 
         notif = new Notification.Builder(context);
         notif.setSmallIcon(R.mipmap.ic_launcher);
-
+        int notificationId = new Random().nextInt();
         notif.setContentTitle("Do you want to send battery level msg to others?");
         Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         notif.setSound(path);
         nm = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
 
         Intent yesReceive = new Intent();
-        yesReceive.putExtra("notificationId",10);
+        yesReceive.putExtra("notificationId",notificationId);
         yesReceive.setAction(AppConstant.YES_ACTION);
         PendingIntent pendingIntentYes = PendingIntent.getBroadcast(context, 12345, yesReceive, PendingIntent.FLAG_UPDATE_CURRENT);
-        notif.addAction(R.drawable.alert_icon, "Yes", pendingIntentYes);
+        notif.addAction(R.drawable.ic_notifications, "Yes", pendingIntentYes);
 
 
         Intent yesReceive2 = new Intent();
-        yesReceive.putExtra("notificationId",10);
+        yesReceive.putExtra("notificationId",notificationId);
         yesReceive2.setAction(AppConstant.STOP_ACTION);
         PendingIntent pendingIntentYes2 = PendingIntent.getBroadcast(context, 12345, yesReceive2, PendingIntent.FLAG_UPDATE_CURRENT);
-        notif.addAction(R.drawable.alert_icon, "No", pendingIntentYes2);
+        notif.addAction(R.drawable.ic_notifications, "No", pendingIntentYes2);
 
 
         nm.notify(10, notif.getNotification());

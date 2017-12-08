@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
+
+    <gradient
+        android:centerColor="@android:color/transparent"
+        android:endColor="@android:color/transparent"
+        android:startColor="@android:color/transparent" />
+
+    <stroke
+        android:width="1dp"
+        android:color="#FFFFFF" />
+
+</shape>
+    <!--
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
     <stroke
         android:width="2dp"
         android:color="@color/txtcolor"/>
     <solid android:color="@color/txtcolor"/>
-</shape>
+</shape>-->

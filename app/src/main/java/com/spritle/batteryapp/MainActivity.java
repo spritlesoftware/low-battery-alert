@@ -223,16 +223,22 @@ public class MainActivity extends AppCompatActivity {
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progressChangedValue = progress;
-                level_txt.setText(Integer.toString(progressChangedValue));
-                seekBar.setThumb(getThumb(progress));
-                editor = preferences.edit();
-                editor.putString("batterylevel", Integer.toString(progressChangedValue));
-                editor.apply();
-                if (level > seekBar.getProgress()) {
-                    sms_status = false;
+                if(progressChangedValue>=5) {
+
+                    level_txt.setText(Integer.toString(progressChangedValue));
+                    seekBar.setThumb(getThumb(progress));
                     editor = preferences.edit();
-                    editor.putBoolean("sms_status", false);
+                    editor.putString("batterylevel", Integer.toString(progressChangedValue));
                     editor.apply();
+                    if (level > seekBar.getProgress()) {
+                        sms_status = false;
+                        editor = preferences.edit();
+                        editor.putBoolean("sms_status", false);
+                        editor.apply();
+                    }
+                }else{
+
+                    Toast.makeText(MainActivity.this,"you set minimum range battery level as 5%",Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -243,18 +249,24 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                level_txt.setText(Integer.toString(progressChangedValue));
-                editor = preferences.edit();
-                editor.putString("batterylevel", Integer.toString(progressChangedValue));
-                editor.apply();
-                if (level > seekBar.getProgress()) {
-                    sms_status = false;
+                if(progressChangedValue>=5) {
+                    seekBar.setEnabled(true);
+                    level_txt.setText(Integer.toString(progressChangedValue));
                     editor = preferences.edit();
-                    editor.putBoolean("sms_status", false);
+                    editor.putString("batterylevel", Integer.toString(progressChangedValue));
                     editor.apply();
+                    if (level > seekBar.getProgress()) {
+                        sms_status = false;
+                        editor = preferences.edit();
+                        editor.putBoolean("sms_status", false);
+                        editor.apply();
+                    }
+
                 }
+                else{
 
-
+                    Toast.makeText(MainActivity.this,"you set minimum range battery level as 5%",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -287,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.custom_dialog);
-
+        dialog.setCanceledOnTouchOutside(true);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         final EditText edt = (EditText) dialog.findViewById(R.id.edit1);
 

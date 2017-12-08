@@ -17,7 +17,9 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:rotation="90"
-            android:fontFamily="@font/avenir_roman"
+            android:fontFamily="@font/avenir_book"
+            android:textStyle="bold"
+            android:textColor="@color/White"
             android:textSize="14sp" />
 
     </LinearLayout>
