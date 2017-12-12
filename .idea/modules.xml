@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BatteryApplication.iml" filepath="$PROJECT_DIR$/BatteryApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Volta.iml" filepath="$PROJECT_DIR$/Volta.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
