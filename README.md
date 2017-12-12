@@ -16,8 +16,6 @@ Minoot is now available in the [Play Store](https://play.google.com/store/apps/d
 ## Screenshots
 <div style="display:flex;" >
 <img style="margin-left:10px;" src="screens/screen1.png" width="19%" >
-<img style="margin-left:10px;" src="screens/screen2.png" width="19%" >
-<img style="margin-left:10px;" src="screens/screen3.png" width="19%" >
 </div>
 
 
