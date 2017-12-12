@@ -84,7 +84,7 @@
                     android:layout_gravity="center"
                     android:alpha="0.7"
                     android:max="100"
-                    android:min="5"
+                    android:min="0"
                     android:maxHeight="120dp"
                     android:minHeight="120dp"
                     android:progress="20"

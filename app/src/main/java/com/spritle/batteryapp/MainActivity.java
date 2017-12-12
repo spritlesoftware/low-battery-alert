@@ -132,9 +132,9 @@ public class MainActivity extends AppCompatActivity {
             pb.setThumb(getThumb(Integer.parseInt(pb_size)));
             level_txt.setText(pb_size);
         } else {
-            pb.setProgress(0);
-            pb.setThumb(getThumb(0));
-            level_txt.setText(Integer.toString(0));
+            pb.setProgress(5);
+            pb.setThumb(getThumb(5));
+            level_txt.setText(Integer.toString(5));
         }
         editor = preferences.edit();
         editor.putString("batterylevel", level_txt.getText().toString());
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progressChangedValue = progress;
-                if(progressChangedValue>=5) {
+                if(progressChangedValue >= 5 && progressChangedValue <= 30) {
 
                     level_txt.setText(Integer.toString(progressChangedValue));
                     seekBar.setThumb(getThumb(progress));
@@ -237,11 +237,16 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                     }
                 }else{
-
-                    Toast.makeText(MainActivity.this,"you set minimum range battery level as 5%",Toast.LENGTH_SHORT).show();
+                    //seekBar.setEnabled(false);
+                    Toast.makeText(MainActivity.this,"You can set alert level between 5% and 30%",Toast.LENGTH_SHORT).show();
                 }
-
-
+                int minValue = 5;
+                int maxValue = 30;
+                if(seekBar.getProgress() >= (maxValue - minValue)){
+                    seekBar.setProgress(maxValue);
+                }else if(seekBar.getProgress() <= minValue){
+                    seekBar.setProgress(minValue);
+                }
             }
 
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -249,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onStopTrackingTouch(SeekBar seekBar) {
-                if(progressChangedValue>=5) {
+                if(progressChangedValue>=5 && progressChangedValue <= 30) {
                     seekBar.setEnabled(true);
                     level_txt.setText(Integer.toString(progressChangedValue));
                     editor = preferences.edit();
