@@ -1,5 +1,5 @@
 # Minoot
-<img src="./minoot_logo.png" align="left" width="200" hspace="10" vspace="10">
+<img src="./minoot_icon.png" align="left" width="200" hspace="10" vspace="10">
 Minoot is a simple way to send alert notification to our beloved ones when the battery is low and before its getting switched off. This will avoid our beloved ones getting panic when our mobile gets switched off due to low battery.</br>
 
 Minoot is now available in the [Play Store](https://play.google.com/store/apps/details?id=com.spritle.batteryapp)   </br>
@@ -16,10 +16,9 @@ Minoot is now available in the [Play Store](https://play.google.com/store/apps/d
 ## Screenshots
 <div style="display:flex;" >
 <img  src="screenshots/1.png" width="19%" >
-<img style="margin-left:10px;" src="screenshots/2.png" width="19%" >
-<img style="margin-left:10px;" src="screenshots/3.png" width="19%" >
-<img style="margin-left:10px;" src="screenshots/4.png" width="19%" >
-<img style="margin-left:10px;" src="screenshots/5.png" width="19%" >
+<img style="margin-left:10px;" src="screens/screen1.png" width="19%" >
+<img style="margin-left:10px;" src="screens/screen2.png" width="19%" >
+<img style="margin-left:10px;" src="screens/screen3.png" width="19%" >
 
 </div>
 
