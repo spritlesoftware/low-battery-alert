@@ -14,7 +14,6 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 
-
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
@@ -22,8 +21,8 @@ android {
         applicationId "com.spritle.batteryapp"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 2
-        versionName "1.0"
+        versionCode 3
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
