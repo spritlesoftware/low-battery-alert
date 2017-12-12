@@ -510,7 +510,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.share:
                         drawerLayout.closeDrawers();
-                        String shareBody = "https://play.google.com/store/apps/details?id=************************";
+                        String shareBody = "https://play.google.com/store/apps/details?id=com.spritle.batteryapp";
 
                         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                         sharingIntent.setType("text/plain");
