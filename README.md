@@ -1,8 +1,8 @@
 # Minoot
 <img src="./minoot_icon.png" align="left" width="200" hspace="10" vspace="10">
-<b><i>Minoot</i></b>        is a simple way to send alert notification to our beloved ones when the battery is low and before its getting switched off. This will avoid our beloved ones getting panic when our mobile gets switched off due to low battery.        </br>            
+<b><i>Minoot</i></b>        is a simple way to send alert notification to our beloved ones when the battery is low and before its getting switched off. This will avoid our beloved ones getting panic when our mobile gets switched off due to low battery.       
 
-   Minoot is now available in the [Play Store](https://play.google.com/store/apps/details?id=com.spritle.batteryapp)   </br>
+   Minoot is now available in the [Play Store](https://play.google.com/store/apps/details?id=com.spritle.batteryapp) 
 
 <div style="display:flex;" >
 <a href="https://play.google.com/store/apps/details?id=com.spritle.batteryapp">
@@ -16,20 +16,20 @@
 ## Features    
 
 
-#### Set Alert level
-Set the battery alert level in an aesthetic UI     
+* #### Set Alert level
+  Set the battery alert level in an aesthetic UI     
 
-#### Add Recipients      
-Add from your contacts multiple members you would want to be notified      
+* #### Add Recipients      
+  Add from your contacts multiple members you would want to be notified      
 
-#### Customize Message      
-Customize the alert message to want to be sent out    
+* #### Customize Message      
+  Customize the alert message to want to be sent out    
 
-#### Messaging     
-Uses mobile network and sends notification through SMS      
+* #### Messaging     
+  Uses mobile network and sends notification through SMS      
 
-#### Processing    
-Very light on your mobile processor memory and battery      
+* #### Processing    
+  Very light on your mobile processor memory and battery      
 
 
 ## Screenshots
@@ -44,9 +44,9 @@ Very light on your mobile processor memory and battery
 Minoot is licensed under the [GNU v3 Public License](https://github.com/HoraApps/LeafPic/blob/master/LICENSE).
 In addition to the terms set by the GNU v3 Public License, we ask that if you use any code from this repository that you send us a message to let us know.      
 
-### About   
+### Team   
 
 <img src="./spritle_logo.png" width="200"><br/>    
 
-Minoot is maintained by [Spritle Software](https://www.spritle.com/) . We ❤ open source and build products using Ruby, Rails, Node JS, Java, Android, Swift, React Native etc .
+Minoot is build by [Spritle Software](https://www.spritle.com/) . We ❤ open source and build products using Ruby, Rails, Node JS, Java, Android, Swift, React Native etc .
 
