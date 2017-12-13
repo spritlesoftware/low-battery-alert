@@ -1,6 +1,6 @@
 # Minoot
 <img src="./minoot_icon.png" align="left" width="200" hspace="10" vspace="10">
-Minoot is a simple way to send alert notification to our beloved ones when the battery is low and before its getting switched off. This will avoid our beloved ones getting panic when our mobile gets switched off due to low battery.</br>
+Minoot is a simple way to send alert notification to our beloved ones when the battery is low and before its getting switched off. This will avoid our beloved ones getting panic when our mobile gets switched off due to low battery.</br>        
 
 Minoot is now available in the [Play Store](https://play.google.com/store/apps/details?id=com.spritle.batteryapp)   </br>
 
@@ -23,5 +23,9 @@ Minoot is now available in the [Play Store](https://play.google.com/store/apps/d
 
 #### Licensing
 Minoot is licensed under the [GNU v3 Public License](https://github.com/HoraApps/LeafPic/blob/master/LICENSE).
-In addition to the terms set by the GNU v3 Public License, we ask that if you use any code from this repository that you send us a message to let us know.
+In addition to the terms set by the GNU v3 Public License, we ask that if you use any code from this repository that you send us a message to let us know.      
+
+### About       
+
+Minoot is maintained by [Spritle Software](https://www.spritle.com/) . We love open source and build products using Ruby, Rails, Node JS, Java, Android, Swift, React Native etc .
 
