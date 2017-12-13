@@ -1,6 +1,6 @@
 # Minoot
 <img src="./minoot_icon.png" align="left" width="200" hspace="10" vspace="10">
-Minoot is a simple way to send alert notification to our beloved ones when the battery is low and before its getting switched off. This will avoid our beloved ones getting panic when our mobile gets switched off due to low battery.</br>        
+<b><i>Minoot</i></b>        is a simple way to send alert notification to our beloved ones when the battery is low and before its getting switched off. This will avoid our beloved ones getting panic when our mobile gets switched off due to low battery.</br>        
 
 Minoot is now available in the [Play Store](https://play.google.com/store/apps/details?id=com.spritle.batteryapp)   </br>
 
