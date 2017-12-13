@@ -13,6 +13,25 @@
 </div>
 </br></br>
 
+## Features    
+
+
+#### Set Alert level
+Set the battery alert level in an aesthetic UI     
+
+#### Add Recipients      
+Add from your contacts multiple members you would want to be notified      
+
+#### Customize Message      
+Customize the alert message to want to be sent out    
+
+#### Messaging     
+Uses mobile network and sends notification through SMS      
+
+#### Processing    
+Very light on your mobile processor memory and battery      
+
+
 ## Screenshots
 <div style="display:flex;" >
 <img style="margin-left:10px;" src="screens/screen1.png" width="30%" >
@@ -21,7 +40,7 @@
 </div>
 
 
-#### Licensing
+### Licensing
 Minoot is licensed under the [GNU v3 Public License](https://github.com/HoraApps/LeafPic/blob/master/LICENSE).
 In addition to the terms set by the GNU v3 Public License, we ask that if you use any code from this repository that you send us a message to let us know.      
 
