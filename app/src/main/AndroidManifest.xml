@@ -43,9 +43,6 @@
 
             </intent-filter>
         </receiver>
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="b53aea9aea1c8c6348347e7c3b26d7c9236a5465" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
