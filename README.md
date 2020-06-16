@@ -41,7 +41,7 @@
 
 
 ### Licensing
-Minoot is licensed under the [GNU v3 Public License](https://github.com/HoraApps/LeafPic/blob/master/LICENSE).
+Minoot is licensed under the [GNU v3 Public License](https://github.com/spritlesoftware/low-battery-alert/blob/master/LICENSE).
 In addition to the terms set by the GNU v3 Public License, we ask that if you use any code from this repository that you send us a message to let us know.      
 
 ### Team   
